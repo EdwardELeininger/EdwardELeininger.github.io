@@ -1,14 +1,26 @@
-<link href="/CSS/style.app" rel="styleshee">
-<html>
-    <head>
-    </head>
-    <body>
-        <div class='max-w-sm rounded overflow-hidden shadow-lg'>
-            <div>
-                <div>
-                    <button onClick="alert('ohaithar')">ohaithar</button>
-                </div>
-            </div>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+        import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://unpkg.com/three/examples/jsm/loaders/GLTFLoader.js';
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.getElementById("keebHolder").appendChild( renderer.domElement );
+        const loader = new GLTFLoader();
+        loader.load( 'models/keebHolder.glb', function ( gltf ) {
+            scene.add( gltf.scene );
+            }, undefined, function ( error ) {
+                console.error( error );
+                } );
+    </script>
+    <div id="keebHolder"></div>
+</body>
 </html>
