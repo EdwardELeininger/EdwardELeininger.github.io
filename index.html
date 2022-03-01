@@ -7,6 +7,8 @@
 <body>
 <h1>ohaithar</h1>
     <script type="module">
+        Window.addEventListener('load',
+        function(){
         import * as THREE from 'https://unpkg.com/three/build/three.module.js';
         import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
         import { GLTFLoader } from 'https://unpkg.com/three/examples/jsm/loaders/GLTFLoader.js';
@@ -21,6 +23,7 @@
             }, undefined, function ( error ) {
                 console.error( error );
                 } );
+},false);
     </script>
     <div id="keebHolder"></div>
 </body>
